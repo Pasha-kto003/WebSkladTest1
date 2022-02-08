@@ -69,6 +69,7 @@ namespace WebSkladTest1.Controllers
             dBContext.Remove(product);
             await dBContext.SaveChangesAsync();
             return Ok();
+            
         }
     }
 }

@@ -44,6 +44,7 @@ namespace WebSkladTest1.Controllers
             await dBContext.Shops.AddAsync(newshop);
             await dBContext.SaveChangesAsync();
             return Ok(newshop.Id);
+            
         }
 
         // PUT api/<ShopController>/5
