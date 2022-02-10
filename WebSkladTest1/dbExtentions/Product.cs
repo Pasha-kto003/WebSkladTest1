@@ -18,6 +18,7 @@ namespace WebSkladTest1.db
                 CountInStock = product.CountInStock,
                 BestBeforeDateStart = product.BestBeforeDateStart,
                 BestBeforeDateEnd = product.BestBeforeDateEnd,
+                Status = product.Status,
                 UnitId = product.UnitId,
                 ProductTypeId = product.ProductTypeId,
             };
@@ -33,6 +34,7 @@ namespace WebSkladTest1.db
                 CountInStock = product.CountInStock,
                 BestBeforeDateStart = product.BestBeforeDateStart,
                 BestBeforeDateEnd = product.BestBeforeDateEnd,
+                Status = product.Status,
                 UnitId = product.UnitId,
                 ProductTypeId = product.ProductTypeId,
             };

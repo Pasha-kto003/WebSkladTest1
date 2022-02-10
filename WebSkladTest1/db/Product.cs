@@ -24,6 +24,7 @@ namespace WebSkladTest1.db
         public DateTime? BestBeforeDateEnd { get; set; }
         public int? ProductTypeId { get; set; }
         public int? UnitId { get; set; }
+        public string Status { get; set; }
 
         public virtual ProductType ProductType { get; set; }
         public virtual Unit Unit { get; set; }

@@ -16,5 +16,6 @@ namespace ModelApi
         public DateTime? BestBeforeDateEnd { get; set; }
         public int? UnitId { get; set; }
         public int? ProductTypeId { get; set; }
+        public string Status { get; set; }
     }
 }
