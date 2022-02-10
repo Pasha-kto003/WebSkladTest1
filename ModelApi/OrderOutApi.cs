@@ -12,7 +12,7 @@ namespace ModelApi
         public DateTime? DateOrderOut { get; set; }
         public string Status { get; set; }
         public int? ShopId { get; set; }
-
+        public int? SupplierId { get; set; }
         public List<ProductApi> Products { get; set; }
     }
 }

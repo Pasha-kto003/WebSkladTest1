@@ -16,7 +16,9 @@ namespace WebSkladTest1.db
         public DateTime? DateOrderOut { get; set; }
         public string Status { get; set; }
         public int? ShopId { get; set; }
+        public int? SupplierId { get; set; }
 
+        public virtual Supplier Supplier { get; set; }
         public virtual Shop Shop { get; set; }
         public virtual ICollection<CrossOrderOut> CrossOrderOuts { get; set; }
     }

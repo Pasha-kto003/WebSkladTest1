@@ -15,7 +15,8 @@ namespace WebSkladTest1.db
                 Id = orderOut.Id,
                 DateOrderOut = orderOut.DateOrderOut,
                 ShopId = orderOut.ShopId,
-                Status = orderOut.Status
+                Status = orderOut.Status,
+                SupplierId = orderOut.SupplierId
             };
         }
 
@@ -26,7 +27,8 @@ namespace WebSkladTest1.db
                 Id = orderOut.Id,
                 DateOrderOut = orderOut.DateOrderOut,
                 ShopId = orderOut.ShopId,
-                Status = orderOut.Status
+                Status = orderOut.Status,
+                SupplierId = orderOut.SupplierId
             };
         }
     }

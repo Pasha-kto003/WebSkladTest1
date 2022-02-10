@@ -142,6 +142,11 @@ namespace WebSkladTest1.db
                     .WithMany(p => p.OrderOuts)
                     .HasForeignKey(d => d.ShopId)
                     .HasConstraintName("FK_OrderOut_Shop");
+
+                entity.HasOne(d => d.Supplier)
+                    .WithMany(p => p.OrderOuts)
+                    .HasForeignKey(d => d.SupplierId)
+                    .HasConstraintName("FK_OrederOut_Supplier");
             });
 
             modelBuilder.Entity<Product>(entity =>
