@@ -14,7 +14,8 @@ namespace WebSkladTest1.db
             {
                 Id = rack.Id,
                 Capacity = rack.Capacity,
-                Name = rack.Name
+                Name = rack.Name,
+                PersonalId = rack.PersonalId
             };
         }
 
@@ -24,7 +25,8 @@ namespace WebSkladTest1.db
             {
                 Id = rack.Id,
                 Capacity = rack.Capacity,
-                Name = rack.Name
+                Name = rack.Name,
+                PersonalId = rack.PersonalId
             };
         }
     }

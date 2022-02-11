@@ -26,6 +26,8 @@ namespace WebSkladTest1.db
         public virtual DbSet<ProductSupplier> ProductSuppliers { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<Rack> Racks { get; set; }
+        public virtual DbSet<Personal> Personals { get; set; }
+        public virtual DbSet<Status> Statuses { get; set; }
         public virtual DbSet<Shop> Shops { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
@@ -149,6 +151,57 @@ namespace WebSkladTest1.db
                     .HasConstraintName("FK_OrederOut_Supplier");
             });
 
+            modelBuilder.Entity<Personal>(entity =>
+            {
+                entity.ToTable("Personal");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.FirstName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LastName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Patronimyc)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Rating)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Phone)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Image)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.DateStartWork).HasColumnType("datetime");
+
+                entity.Property(e => e.DateEndWork).HasColumnType("datetime");
+
+                entity.HasOne(d => d.Status)
+                    .WithMany(p => p.Personals)
+                    .HasForeignKey(d => d.StatusId)
+                    .HasConstraintName("FK_Personals_Status");
+            });
+
+            modelBuilder.Entity<Status>(entity =>
+            {
+                entity.ToTable("Status");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Title)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Product>(entity =>
             {
                 entity.ToTable("Product");
@@ -180,6 +233,8 @@ namespace WebSkladTest1.db
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.UnitId)
                     .HasConstraintName("FK_Products_Unit");
+
+                
             });
 
             modelBuilder.Entity<ProductSupplier>(entity =>
@@ -221,6 +276,11 @@ namespace WebSkladTest1.db
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.HasOne(d => d.Personal)
+                    .WithMany(p => p.Racks)
+                    .HasForeignKey(d => d.PersonalId)
+                    .HasConstraintName("FK_Racks_Personal");
             });
 
             modelBuilder.Entity<Shop>(entity =>

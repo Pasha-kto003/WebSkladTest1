@@ -15,7 +15,9 @@ namespace WebSkladTest1.db
         public int Id { get; set; }
         public string Name { get; set; }
         public int? Capacity { get; set; }
+        public int? PersonalId { get; set; }
 
+        public virtual Personal Personal { get; set; }
         public virtual ICollection<CrossProductRack> CrossProductRacks { get; set; }
     }
 }
