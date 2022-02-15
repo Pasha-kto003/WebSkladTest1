@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ModelApi
 {
-    public class WriteOffRegisterApi
+    public class WriteOffRegisterApi : ApiBaseType
     {
-        public int Id { get; set; }
         public string Title { get; set; }
         public string ReasonDelete { get; set; }
         public DateTime? DeletedAt { get; set; }

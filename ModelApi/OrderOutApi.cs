@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ModelApi
 {
-    public class OrderOutApi
-    {
-        public int Id { get; set; }
+    public class OrderOutApi : ApiBaseType
+    {       
         public DateTime? DateOrderOut { get; set; }
         public string Status { get; set; }
         public int? ShopId { get; set; }

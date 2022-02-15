@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ModelApi
 {
-    public class RackApi
-    {
-        public int Id { get; set; }
+    public class RackApi : ApiBaseType
+    {        
         public string Name { get; set; }
         public int? Capacity { get; set; }
         public int? PersonalId { get; set; }

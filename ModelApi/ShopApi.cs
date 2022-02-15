@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ModelApi
 {
-    public class ShopApi
-    {
-        public int Id { get; set; }
+    public class ShopApi : ApiBaseType
+    {      
         public string Name { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }

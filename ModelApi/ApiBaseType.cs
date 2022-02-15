@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ModelApi
 {
-    public class UnitApi : ApiBaseType
-    {     
-        public string Title { get; set; }
+    public class ApiBaseType
+    {
+        public int Id { get; set; }
     }
 }

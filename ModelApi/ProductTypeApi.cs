@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ModelApi
 {
-    public class ProductTypeApi
+    public class ProductTypeApi : ApiBaseType
     {
-        public int Id { get; set; }
+        
         public string Title { get; set; }
     }
 }
