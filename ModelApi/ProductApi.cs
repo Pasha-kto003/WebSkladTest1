@@ -16,5 +16,7 @@ namespace ModelApi
         public int? UnitId { get; set; }
         public int? ProductTypeId { get; set; }
         public string Status { get; set; }
+        public UnitApi Unit { get; set; }
+        public ProductTypeApi ProductType { get; set; }
     }
 }
