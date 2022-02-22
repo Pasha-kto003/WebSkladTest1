@@ -12,5 +12,6 @@ namespace ModelApi
         public string ReasonDelete { get; set; }
         public DateTime? DeletedAt { get; set; }
         public int? ProductId { get; set; }
+        public ProductApi Product { get; set; }
     }
 }
