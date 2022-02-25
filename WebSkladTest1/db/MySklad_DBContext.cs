@@ -169,10 +169,6 @@ namespace WebSkladTest1.db
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Rating)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.Phone)
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -319,6 +315,8 @@ namespace WebSkladTest1.db
                 entity.Property(e => e.Title)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                //entity.Property(e => e.Rating).HasMaxLength(7).IsUnicode(false);
             });
 
             modelBuilder.Entity<Unit>(entity =>
