@@ -10,7 +10,7 @@ namespace ModelApi
     {      
         public string Title { get; set; }
         public string Description { get; set; }
-        public int? CountInStock { get; set; }
+        public int CountInStock { get; set; }
         public DateTime? BestBeforeDateStart { get; set; }
         public DateTime? BestBeforeDateEnd { get; set; }
         public int? UnitId { get; set; }
