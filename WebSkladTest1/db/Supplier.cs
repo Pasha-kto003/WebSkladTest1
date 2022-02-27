@@ -10,6 +10,7 @@ namespace WebSkladTest1.db
         public Supplier()
         {
             OrderIns = new HashSet<OrderIn>();
+            OrderOuts = new HashSet<OrderOut>();
             ProductSuppliers = new HashSet<ProductSupplier>();
         }
 
@@ -19,8 +20,8 @@ namespace WebSkladTest1.db
         public string Email { get; set; }
         public string Phone { get; set; }
 
-        public virtual ICollection<OrderOut> OrderOuts { get; set; }
         public virtual ICollection<OrderIn> OrderIns { get; set; }
+        public virtual ICollection<OrderOut> OrderOuts { get; set; }
         public virtual ICollection<ProductSupplier> ProductSuppliers { get; set; }
     }
 }

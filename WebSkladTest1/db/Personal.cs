@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+#nullable disable
 
 namespace WebSkladTest1.db
 {
@@ -16,7 +16,7 @@ namespace WebSkladTest1.db
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Patronimyc { get; set; }
-        public int Rating { get; set; }
+        public int? Rating { get; set; }
         public string Phone { get; set; }
         public string Image { get; set; }
         public DateTime? DateStartWork { get; set; }

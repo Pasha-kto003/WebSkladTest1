@@ -22,13 +22,13 @@ namespace WebSkladTest1.db
         public virtual DbSet<CrossProductRack> CrossProductRacks { get; set; }
         public virtual DbSet<OrderIn> OrderIns { get; set; }
         public virtual DbSet<OrderOut> OrderOuts { get; set; }
+        public virtual DbSet<Personal> Personals { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductSupplier> ProductSuppliers { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<Rack> Racks { get; set; }
-        public virtual DbSet<Personal> Personals { get; set; }
-        public virtual DbSet<Status> Statuses { get; set; }
         public virtual DbSet<Shop> Shops { get; set; }
+        public virtual DbSet<Status> Statuses { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<WriteOffRegister> WriteOffRegisters { get; set; }
@@ -37,7 +37,8 @@ namespace WebSkladTest1.db
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-2KIP198\\SQLEXPRESS;Initial Catalog=MySklad_DB;Trusted_Connection=True;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=DESKTOP-2KIP198\\SQLEXPRESS;Database=MySklad_DB;Trusted_Connection=True; User=dbo");
             }
         }
 
@@ -230,7 +231,7 @@ namespace WebSkladTest1.db
                     .HasForeignKey(d => d.UnitId)
                     .HasConstraintName("FK_Products_Unit");
 
-                
+
             });
 
             modelBuilder.Entity<ProductSupplier>(entity =>
