@@ -26,8 +26,6 @@ namespace WebSkladTest1.db
         public int? UnitId { get; set; }
         public string Status { get; set; }
 
-        public virtual ProductType ProductType { get; set; }
-        public virtual Unit Unit { get; set; }
         public virtual ICollection<CrossOrderOut> CrossOrderOuts { get; set; }
         public virtual ICollection<CrossProductOrder> CrossProductOrders { get; set; }
         public virtual ICollection<CrossProductRack> CrossProductRacks { get; set; }
