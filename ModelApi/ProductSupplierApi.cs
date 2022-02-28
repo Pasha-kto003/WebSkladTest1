@@ -10,5 +10,6 @@ namespace ModelApi
     {
         public int SupplierId { get; set; }
         public int ProductId { get; set; }
+        public ProductApi Product { get; set; }
     }
 }

@@ -14,5 +14,6 @@ namespace ModelApi
         public string Phone { get; set; }
 
         public List<ProductApi> Products { get; set; }
+        public ProductSupplierApi ProductSupplier { get; set; }
     }
 }

@@ -18,5 +18,6 @@ namespace ModelApi
         public string Status { get; set; }
         public UnitApi Unit { get; set; }
         public ProductTypeApi ProductType { get; set; }
+
     }
 }
