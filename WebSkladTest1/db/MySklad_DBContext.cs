@@ -24,7 +24,6 @@ namespace WebSkladTest1.db
         public virtual DbSet<OrderOut> OrderOuts { get; set; }
         public virtual DbSet<Personal> Personals { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductSupplier> ProductSuppliers { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<Rack> Racks { get; set; }
         public virtual DbSet<Shop> Shops { get; set; }
@@ -48,6 +47,7 @@ namespace WebSkladTest1.db
             modelBuilder.Entity<CrossOrderOut>(entity =>
             {
                 entity.HasKey(e => new { e.ProductId, e.OrderOutId });
+
                 entity.ToTable("CrossOrderOut");
 
                 entity.HasOne(d => d.OrderOut)
@@ -85,7 +85,6 @@ namespace WebSkladTest1.db
             modelBuilder.Entity<CrossProductRack>(entity =>
             {
                 entity.HasKey(e => new { e.RackId, e.ProductId });
-
                 entity.ToTable("CrossProductRack");
 
                 entity.Property(e => e.DeletionDate)
@@ -217,25 +216,6 @@ namespace WebSkladTest1.db
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.UnitId)
                     .HasConstraintName("FK_Products_Unit");
-            });
-
-            modelBuilder.Entity<ProductSupplier>(entity =>
-            {
-                entity.HasKey(e => new { e.SupplierId, e.ProductId });
-
-                entity.ToTable("ProductSupplier");
-
-                entity.HasOne(d => d.Product)
-                    .WithMany(p => p.ProductSuppliers)
-                    .HasForeignKey(d => d.ProductId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ProductSupplier_Product");
-
-                entity.HasOne(d => d.Supplier)
-                    .WithMany(p => p.ProductSuppliers)
-                    .HasForeignKey(d => d.SupplierId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ProductSupplier_Supplier");
             });
 
             modelBuilder.Entity<ProductType>(entity =>

@@ -19,21 +19,12 @@ namespace WebSkladTest1.Controllers
         {
             this.dBContext = dBContext;
         }
-        private SupplierApi CreateSupplierInApi(Supplier supplier, List<ProductApi> products)
-        {
-            var result = (SupplierApi)supplier;
-            result.Products = products;
-            return result;
-        }
+        
         // GET: api/<SupplierController>
         [HttpGet]
         public IEnumerable<SupplierApi> Get()
         {
-            return dBContext.Suppliers.ToList().Select(s =>
-            {
-                var products = dBContext.ProductSuppliers.Where(t => t.SupplierId == s.Id).Select(t => (ProductApi)t.Product).ToList();
-                return CreateSupplierInApi(s, products);
-            });
+            return dBContext.Suppliers.ToList().Select(s => (SupplierApi)s);
         }
 
         // GET api/<SupplierController>/5
@@ -41,48 +32,29 @@ namespace WebSkladTest1.Controllers
         public async Task<ActionResult<SupplierApi>> Get(int id)
         {
             var supplier = await dBContext.Suppliers.FindAsync(id);
-            var product = dBContext.ProductSuppliers.Where(t => t.SupplierId == id).Select(t => (ProductApi)t.Product).ToList();
-            return CreateSupplierInApi(supplier, product);
+            if (supplier == null)
+                return NotFound();
+            return Ok((SupplierApi)supplier);
         }
 
         // POST api/<SupplierController>
         [HttpPost]
-        public async Task<ActionResult<int>> Post([FromBody] SupplierApi newsupplier)
+        public async Task<ActionResult<int>> Post([FromBody] SupplierApi supplier)
         {
-            foreach (var products in newsupplier.Products)
-                if (products.Id == 0)
-                    return BadRequest($"{products.Title} не существует");
-            var supplier = (Supplier)newsupplier;
-            await dBContext.Suppliers.AddAsync(supplier);
+            var newsupplier = (Supplier)supplier;
+            await dBContext.Suppliers.AddAsync(newsupplier);
             await dBContext.SaveChangesAsync();
-            await dBContext.ProductSuppliers.AddRangeAsync(newsupplier.Products.Select(s => new ProductSupplier
-            {
-                SupplierId = supplier.Id,
-                ProductId = s.Id
-            }));
-            await dBContext.SaveChangesAsync();
-            return Ok(supplier.Id);
+            return Ok(newsupplier.Id);
         }
 
         // PUT api/<SupplierController>/5
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] SupplierApi editSupplier)
         {
-            foreach (var products in editSupplier.Products)
-                if (products.Id == 0)
-                    return BadRequest($"Продукт {products.Title} не существует");
-            var supplier = (Supplier)editSupplier;
-            var oldsupplier = await dBContext.Suppliers.FindAsync(id);
-            if (oldsupplier == null)
+            var oldSup = await dBContext.Suppliers.FindAsync(id);
+            if (oldSup == null)
                 return NotFound();
-            dBContext.Entry(oldsupplier).CurrentValues.SetValues(supplier);
-            var productRemove = dBContext.ProductSuppliers.Where(s => s.SupplierId == id).ToList();
-            dBContext.ProductSuppliers.RemoveRange(productRemove);
-            await dBContext.ProductSuppliers.AddRangeAsync(editSupplier.Products.Select(s => new ProductSupplier
-            {
-                SupplierId = supplier.Id,
-                ProductId = s.Id
-            }));
+            dBContext.Entry(oldSup).CurrentValues.SetValues(editSupplier);
             await dBContext.SaveChangesAsync();
             return Ok();
         }
@@ -91,14 +63,10 @@ namespace WebSkladTest1.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            var oldSupplier = await dBContext.Suppliers.FindAsync(id);
-            if (oldSupplier == null)
-            {
+            var oldSup = await dBContext.Suppliers.FindAsync(id);
+            if (oldSup == null)
                 return NotFound();
-            }
-            var products = dBContext.ProductSuppliers.Where(s => s.SupplierId == id).ToList();
-            dBContext.ProductSuppliers.RemoveRange(products);
-            dBContext.Suppliers.Remove(oldSupplier);
+            dBContext.Suppliers.Remove(oldSup);
             await dBContext.SaveChangesAsync();
             return Ok();
         }

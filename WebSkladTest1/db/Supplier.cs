@@ -11,7 +11,6 @@ namespace WebSkladTest1.db
         {
             OrderIns = new HashSet<OrderIn>();
             OrderOuts = new HashSet<OrderOut>();
-            ProductSuppliers = new HashSet<ProductSupplier>();
         }
 
         public int Id { get; set; }
@@ -22,6 +21,5 @@ namespace WebSkladTest1.db
 
         public virtual ICollection<OrderIn> OrderIns { get; set; }
         public virtual ICollection<OrderOut> OrderOuts { get; set; }
-        public virtual ICollection<ProductSupplier> ProductSuppliers { get; set; }
     }
 }

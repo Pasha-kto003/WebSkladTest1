@@ -12,7 +12,6 @@ namespace WebSkladTest1.db
             CrossOrderOuts = new HashSet<CrossOrderOut>();
             CrossProductOrders = new HashSet<CrossProductOrder>();
             CrossProductRacks = new HashSet<CrossProductRack>();
-            ProductSuppliers = new HashSet<ProductSupplier>();
             WriteOffRegisters = new HashSet<WriteOffRegister>();
         }
 
@@ -31,7 +30,6 @@ namespace WebSkladTest1.db
         public virtual ICollection<CrossOrderOut> CrossOrderOuts { get; set; }
         public virtual ICollection<CrossProductOrder> CrossProductOrders { get; set; }
         public virtual ICollection<CrossProductRack> CrossProductRacks { get; set; }
-        public virtual ICollection<ProductSupplier> ProductSuppliers { get; set; }
         public virtual ICollection<WriteOffRegister> WriteOffRegisters { get; set; }
     }
 }

@@ -12,8 +12,5 @@ namespace ModelApi
         public int? Rating { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-
-        public List<ProductApi> Products { get; set; }
-        public ProductSupplierApi ProductSupplier { get; set; }
     }
 }
