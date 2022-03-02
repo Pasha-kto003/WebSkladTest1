@@ -17,6 +17,7 @@ namespace WebSkladTest1.db
         {
         }
 
+        public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<CrossOrderOut> CrossOrderOuts { get; set; }
         public virtual DbSet<CrossProductOrder> CrossProductOrders { get; set; }
         public virtual DbSet<CrossProductRack> CrossProductRacks { get; set; }
@@ -43,6 +44,31 @@ namespace WebSkladTest1.db
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Cyrillic_General_CI_AS");
+
+            modelBuilder.Entity<Company>(entity =>
+            {
+                entity.ToTable("Company");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Image).HasMaxLength(50).IsUnicode(false);
+
+                entity.Property(e => e.NameOfCompany)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Phone)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RegistrationDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Registration_Date");
+            });
 
             modelBuilder.Entity<CrossOrderOut>(entity =>
             {
@@ -85,6 +111,7 @@ namespace WebSkladTest1.db
             modelBuilder.Entity<CrossProductRack>(entity =>
             {
                 entity.HasKey(e => new { e.RackId, e.ProductId });
+
                 entity.ToTable("CrossProductRack");
 
                 entity.Property(e => e.DeletionDate)
@@ -292,6 +319,11 @@ namespace WebSkladTest1.db
                 entity.Property(e => e.Title)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.HasOne(d => d.Company)
+                    .WithMany(p => p.Suppliers)
+                    .HasForeignKey(d => d.CompanyId)
+                    .HasConstraintName("FK_Supplier_Company");
             });
 
             modelBuilder.Entity<Unit>(entity =>

@@ -16,7 +16,8 @@ namespace WebSkladTest1.db
                 Email = supplier.Email,
                 Title = supplier.Title,
                 Phone = supplier.Phone,
-                Rating = supplier.Rating
+                Rating = supplier.Rating,
+                CompanyId = supplier.CompanyId
             };
         }
         public static explicit operator Supplier(SupplierApi supplier)
@@ -27,7 +28,8 @@ namespace WebSkladTest1.db
                 Email = supplier.Email,
                 Title = supplier.Title,
                 Phone = supplier.Phone,
-                Rating = supplier.Rating
+                Rating = supplier.Rating,
+                CompanyId = supplier.CompanyId
             };
         }
     }

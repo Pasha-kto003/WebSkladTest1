@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace ModelApi
 {
-    public class SupplierApi : ApiBaseType
-    {       
-        public string Title { get; set; }
-        public int? Rating { get; set; }
+    public class CompanyApi : ApiBaseType
+    {
+        public string NameOfCompany { get; set; }
+        public DateTime? RegistrationDate { get; set; }
+        public string Image { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public int? CompanyId { get; set; }
-
-        public CompanyApi Company { get; set; }
     }
 }

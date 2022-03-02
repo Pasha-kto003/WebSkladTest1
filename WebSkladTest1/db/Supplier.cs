@@ -18,7 +18,9 @@ namespace WebSkladTest1.db
         public int? Rating { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
+        public int? CompanyId { get; set; }
 
+        public virtual Company Company { get; set; }
         public virtual ICollection<OrderIn> OrderIns { get; set; }
         public virtual ICollection<OrderOut> OrderOuts { get; set; }
     }
