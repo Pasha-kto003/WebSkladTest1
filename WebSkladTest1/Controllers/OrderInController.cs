@@ -58,7 +58,8 @@ namespace WebSkladTest1.Controllers
             await dBContext.CrossProductOrders.AddRangeAsync(newOrder.Products.Select(s => new CrossProductOrder
             {
                 OrderInId = order.Id,
-                ProductId = s.Id
+                ProductId = s.Id,
+                CountInOrder = s.CountProducts
             }));
             await dBContext.SaveChangesAsync();
             return Ok(order.Id);
@@ -82,7 +83,7 @@ namespace WebSkladTest1.Controllers
             {
                 OrderInId = order.Id,
                 ProductId = s.Id,
-                //CountInOrder = 
+                CountInOrder = s.CountProducts
             }));
             await dBContext.SaveChangesAsync();
             return Ok();
