@@ -21,6 +21,7 @@ namespace WebSkladTest1.db
                 Status = product.Status,
                 UnitId = product.UnitId,
                 ProductTypeId = product.ProductTypeId,
+                CountProducts = product.CountProducts
             };
         }
 
@@ -37,6 +38,7 @@ namespace WebSkladTest1.db
                 Status = product.Status,
                 UnitId = product.UnitId,
                 ProductTypeId = product.ProductTypeId,
+                CountProducts = product.CountProducts
             };
         }
     }
