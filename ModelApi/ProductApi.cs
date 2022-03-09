@@ -20,5 +20,6 @@ namespace ModelApi
         public ProductTypeApi ProductType { get; set; }
         public CrossProductOrderApi CrossProductOrderApi { get; set; }
         public int? CountProducts { get; set; }
+        public int? CountProductsOut { get; set; }
     }
 }

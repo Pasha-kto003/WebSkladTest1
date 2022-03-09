@@ -11,5 +11,7 @@ namespace ModelApi
         public int ProductId { get; set; }
         public int OrderInId { get; set; }
         public int? CountInOrder { get; set; }
+
+        public ProductApi Product { get; set; }
     }
 }

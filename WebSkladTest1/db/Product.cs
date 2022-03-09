@@ -25,6 +25,7 @@ namespace WebSkladTest1.db
         public int? UnitId { get; set; }
         public string Status { get; set; }
         public int? CountProducts { get; set; }
+        public int? CountProductsOut { get; set; }
 
         public virtual ProductType ProductType { get; set; }
         public virtual Unit Unit { get; set; }

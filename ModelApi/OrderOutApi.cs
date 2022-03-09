@@ -12,6 +12,9 @@ namespace ModelApi
         public string Status { get; set; }
         public int? ShopId { get; set; }
         public int? SupplierId { get; set; }
+
+        public ShopApi Shop { get; set; }
+        public SupplierApi Supplier { get; set; }
         public List<ProductApi> Products { get; set; }
     }
 }
