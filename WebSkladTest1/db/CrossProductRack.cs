@@ -11,7 +11,6 @@ namespace WebSkladTest1.db
         public int ProductId { get; set; }
         public DateTime? PlacementDate { get; set; }
         public DateTime? DeletionDate { get; set; }
-        public int? RemainingPlaces { get; set; }
 
         public virtual Product Product { get; set; }
         public virtual Rack ProductNavigation { get; set; }

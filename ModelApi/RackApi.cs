@@ -11,7 +11,10 @@ namespace ModelApi
         public string Name { get; set; }
         public int? Capacity { get; set; }
         public int? PersonalId { get; set; }
+        public int? RemainingPlaces { get; set; }
 
+        public PersonalApi Personal { get; set; }
         public List<ProductApi> Products { get; set; }
+        public CrossProductRackApi CrossProductRacks { get; set; }
     }
 }

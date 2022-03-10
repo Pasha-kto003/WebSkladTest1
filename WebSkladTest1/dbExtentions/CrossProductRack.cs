@@ -14,7 +14,6 @@ namespace WebSkladTest1.db
             {
                 DeletionDate = crossProduct.DeletionDate,
                 PlacementDate = crossProduct.PlacementDate,
-                RemainingPlaces = crossProduct.RemainingPlaces,
                 ProductId = crossProduct.ProductId,
                 RackId = crossProduct.RackId
             };
@@ -26,7 +25,6 @@ namespace WebSkladTest1.db
             {
                 DeletionDate = crossProduct.DeletionDate,
                 PlacementDate = crossProduct.PlacementDate,
-                RemainingPlaces = crossProduct.RemainingPlaces,
                 ProductId = crossProduct.ProductId,
                 RackId = crossProduct.RackId
             };
