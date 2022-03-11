@@ -12,10 +12,8 @@ namespace WebSkladTest1.db
         {
             return new CrossProductRackApi
             {
-                DeletionDate = crossProduct.DeletionDate,
-                PlacementDate = crossProduct.PlacementDate,
                 ProductId = crossProduct.ProductId,
-                RackId = crossProduct.RackId
+                RackId = crossProduct.RackId              
             };
         }
 
@@ -23,8 +21,6 @@ namespace WebSkladTest1.db
         {
             return new CrossProductRack
             {
-                DeletionDate = crossProduct.DeletionDate,
-                PlacementDate = crossProduct.PlacementDate,
                 ProductId = crossProduct.ProductId,
                 RackId = crossProduct.RackId
             };

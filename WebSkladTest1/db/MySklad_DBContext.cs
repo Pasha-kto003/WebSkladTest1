@@ -117,14 +117,6 @@ namespace WebSkladTest1.db
 
                 entity.ToTable("CrossProductRack");
 
-                entity.Property(e => e.DeletionDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("Deletion_Date");
-
-                entity.Property(e => e.PlacementDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("Placement_Date");
-
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.CrossProductRacks)
                     .HasForeignKey(d => d.ProductId)
@@ -265,9 +257,21 @@ namespace WebSkladTest1.db
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
+                entity.Property(e => e.ChangedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Changed_Date");
+
+                entity.Property(e => e.DeletionDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Deletion_Date");
+
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.Property(e => e.PlacementDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Placement_Date");
 
                 entity.HasOne(d => d.Personal)
                     .WithMany(p => p.Racks)

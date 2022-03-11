@@ -16,7 +16,10 @@ namespace WebSkladTest1.db
                 Capacity = rack.Capacity,
                 Name = rack.Name,
                 PersonalId = rack.PersonalId,
-                RemainingPlaces = rack.RemainingPlaces
+                RemainingPlaces = rack.RemainingPlaces,
+                PlacementDate = rack.PlacementDate,
+                DeletionDate = rack.DeletionDate,
+                ChangedDate = rack.ChangedDate
             };
         }
 
@@ -28,7 +31,10 @@ namespace WebSkladTest1.db
                 Capacity = rack.Capacity,
                 Name = rack.Name,
                 PersonalId = rack.PersonalId,
-                RemainingPlaces = rack.RemainingPlaces
+                RemainingPlaces = rack.RemainingPlaces,
+                PlacementDate = rack.PlacementDate,
+                DeletionDate = rack.DeletionDate,
+                ChangedDate = rack.ChangedDate
             };
         }
     }
