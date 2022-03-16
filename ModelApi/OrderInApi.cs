@@ -12,7 +12,7 @@ namespace ModelApi
         public string Status { get; set; }
         public int? SupplierId { get; set; }
 
-        public List<CrossProductOrderApi> CrossProductOrders { get; set; }
+        //public List<CrossProductOrderApi> CrossProductOrders { get; set; }
         public SupplierApi Supplier { get; set; }
         public List<ProductApi> Products { get; set; }
     }
