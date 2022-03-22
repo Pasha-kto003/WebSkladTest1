@@ -39,9 +39,14 @@ namespace WebSkladTest1.Controllers
         // POST api/<WriteOffRegisterController>
         [HttpPost]
         public async Task<ActionResult<int>> Post([FromBody] WriteOffRegisterApi value)
-        {
+        {           
             var type = (WriteOffRegister)value;
+            var prod = dBContext.Products.FirstOrDefault(s => s.Id == type.ProductId);
             await dBContext.WriteOffRegisters.AddAsync(type);
+            if (type.ProductId != 0)
+            {
+                prod.Status = "Удален";
+            }
             await dBContext.SaveChangesAsync();
             return Ok(type.Id);
         }
