@@ -8,7 +8,7 @@ namespace ModelApi
 {
     public class OrderOutApi : ApiBaseType
     {       
-        public DateTime? DateOrderOut { get; set; }
+        public DateTime DateOrderOut { get; set; }
         public string Status { get; set; }
         public int? ShopId { get; set; }
         public int? SupplierId { get; set; }

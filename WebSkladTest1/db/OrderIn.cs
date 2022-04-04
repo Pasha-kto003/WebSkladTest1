@@ -13,7 +13,7 @@ namespace WebSkladTest1.db
         }
 
         public int Id { get; set; }
-        public DateTime? DateOrderIn { get; set; }
+        public DateTime DateOrderIn { get; set; }
         public int? SupplierId { get; set; }
         public string Status { get; set; }
 
