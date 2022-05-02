@@ -16,5 +16,6 @@ namespace ModelApi
         public ShopApi Shop { get; set; }
         public SupplierApi Supplier { get; set; }
         public List<ProductApi> Products { get; set; }
+        public IEnumerable<CrossProductOrderApi> CrossProductOrders { get; set; }
     }
 }
