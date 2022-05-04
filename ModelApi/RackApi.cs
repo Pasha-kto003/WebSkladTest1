@@ -15,9 +15,10 @@ namespace ModelApi
         public DateTime? PlacementDate { get; set; }
         public DateTime? DeletionDate { get; set; }
         public DateTime ChangedDate { get; set; }
+        
 
         public PersonalApi Personal { get; set; }
         public List<ProductApi> Products { get; set; }
-        public CrossProductRackApi CrossProductRacks { get; set; }
+        public IEnumerable<CrossProductRackApi> CrossProductRacks { get; set; }
     }
 }

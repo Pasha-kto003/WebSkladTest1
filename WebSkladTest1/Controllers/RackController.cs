@@ -59,6 +59,7 @@ namespace WebSkladTest1.Controllers
             {
                 RackId = rack.Id,
                 ProductId = s.Id,
+                DateProductPlacement = DateTime.Now
             }));
             await dBContext.SaveChangesAsync();
             return Ok(rack.Id);
@@ -81,7 +82,8 @@ namespace WebSkladTest1.Controllers
             await dBContext.CrossProductRacks.AddRangeAsync(editRack.Products.Select(s => new CrossProductRack
             {
                 RackId = rack.Id,
-                ProductId = s.Id
+                ProductId = s.Id,
+                DateProductPlacement = DateTime.Now
             }));
             await dBContext.SaveChangesAsync();
             return Ok();

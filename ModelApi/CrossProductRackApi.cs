@@ -10,6 +10,7 @@ namespace ModelApi
     {
         public int RackId { get; set; }
         public int ProductId { get; set; }
+        public DateTime? DateProductPlacement { get; set; }
 
         public RackApi Rack { get; set; }
         public ProductApi Product { get; set; }

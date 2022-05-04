@@ -117,6 +117,8 @@ namespace WebSkladTest1.db
 
                 entity.ToTable("CrossProductRack");
 
+                entity.Property(e => e.DateProductPlacement).HasColumnType("datetime");
+
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.CrossProductRacks)
                     .HasForeignKey(d => d.ProductId)

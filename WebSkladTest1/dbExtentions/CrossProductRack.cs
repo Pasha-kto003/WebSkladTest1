@@ -13,7 +13,8 @@ namespace WebSkladTest1.db
             return new CrossProductRackApi
             {
                 ProductId = crossProduct.ProductId,
-                RackId = crossProduct.RackId              
+                RackId = crossProduct.RackId,
+                DateProductPlacement = crossProduct.DateProductPlacement
             };
         }
 
@@ -22,7 +23,8 @@ namespace WebSkladTest1.db
             return new CrossProductRack
             {
                 ProductId = crossProduct.ProductId,
-                RackId = crossProduct.RackId
+                RackId = crossProduct.RackId,
+                DateProductPlacement = crossProduct.DateProductPlacement
             };
         }
     }
