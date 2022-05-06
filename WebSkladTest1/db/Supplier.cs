@@ -14,11 +14,13 @@ namespace WebSkladTest1.db
         }
 
         public int Id { get; set; }
-        public string Title { get; set; }
+        public string FirstName { get; set; }
         public int? Rating { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public int? CompanyId { get; set; }
+        public string LastName { get; set; }
+        public string Patronimyc { get; set; }
 
         public virtual Company Company { get; set; }
         public virtual ICollection<OrderIn> OrderIns { get; set; }

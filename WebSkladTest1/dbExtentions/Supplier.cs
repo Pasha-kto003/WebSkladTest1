@@ -14,7 +14,9 @@ namespace WebSkladTest1.db
             {
                 Id = supplier.Id,
                 Email = supplier.Email,
-                Title = supplier.Title,
+                FirstName = supplier.FirstName,
+                LastName = supplier.LastName,
+                Patronimyc = supplier.Patronimyc,
                 Phone = supplier.Phone,
                 Rating = supplier.Rating,
                 CompanyId = supplier.CompanyId
@@ -26,7 +28,9 @@ namespace WebSkladTest1.db
             {
                 Id = supplier.Id,
                 Email = supplier.Email,
-                Title = supplier.Title,
+                FirstName = supplier.FirstName,
+                LastName = supplier.LastName,
+                Patronimyc = supplier.Patronimyc,
                 Phone = supplier.Phone,
                 Rating = supplier.Rating,
                 CompanyId = supplier.CompanyId

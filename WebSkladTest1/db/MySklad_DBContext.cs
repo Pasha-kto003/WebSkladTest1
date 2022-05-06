@@ -321,11 +321,19 @@ namespace WebSkladTest1.db
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Phone)
+                entity.Property(e => e.FirstName)
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Title)
+                entity.Property(e => e.LastName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Patronimyc)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Phone)
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
