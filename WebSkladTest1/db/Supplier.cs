@@ -21,6 +21,7 @@ namespace WebSkladTest1.db
         public int? CompanyId { get; set; }
         public string LastName { get; set; }
         public string Patronimyc { get; set; }
+        public string Status { get; set; }
 
         public virtual Company Company { get; set; }
         public virtual ICollection<OrderIn> OrderIns { get; set; }

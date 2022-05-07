@@ -15,6 +15,7 @@ namespace ModelApi
         public string Email { get; set; }
         public string Phone { get; set; }
         public int? CompanyId { get; set; }
+        public string Status { get; set; }
 
         public CompanyApi Company { get; set; }
     }

@@ -19,7 +19,8 @@ namespace WebSkladTest1.db
                 Patronimyc = supplier.Patronimyc,
                 Phone = supplier.Phone,
                 Rating = supplier.Rating,
-                CompanyId = supplier.CompanyId
+                CompanyId = supplier.CompanyId,
+                Status = supplier.Status
             };
         }
         public static explicit operator Supplier(SupplierApi supplier)
@@ -33,7 +34,8 @@ namespace WebSkladTest1.db
                 Patronimyc = supplier.Patronimyc,
                 Phone = supplier.Phone,
                 Rating = supplier.Rating,
-                CompanyId = supplier.CompanyId
+                CompanyId = supplier.CompanyId,
+                Status = supplier.Status
             };
         }
     }

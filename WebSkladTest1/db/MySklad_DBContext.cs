@@ -337,6 +337,10 @@ namespace WebSkladTest1.db
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Status)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
                 entity.HasOne(d => d.Company)
                     .WithMany(p => p.Suppliers)
                     .HasForeignKey(d => d.CompanyId)
