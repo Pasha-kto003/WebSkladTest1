@@ -13,6 +13,6 @@ namespace ModelApi
         public int? CountOutOrder { get; set; }
 
         public ProductApi Product { get; set; }
-
+        public OrderOutApi OrderOut { get; set; }
     }
 }
