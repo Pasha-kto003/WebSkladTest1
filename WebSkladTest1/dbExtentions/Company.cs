@@ -17,7 +17,8 @@ namespace WebSkladTest1.db
                 Image = company.Image,
                 Phone = company.Phone,
                 NameOfCompany = company.NameOfCompany,
-                RegistrationDate = company.RegistrationDate
+                RegistrationDate = company.RegistrationDate,
+                Address = company.Address
             };
         }
 
@@ -30,7 +31,8 @@ namespace WebSkladTest1.db
                 Image = company.Image,
                 Phone = company.Phone,
                 NameOfCompany = company.NameOfCompany,
-                RegistrationDate = company.RegistrationDate
+                RegistrationDate = company.RegistrationDate,
+                Address = company.Address
             };
         }
     }

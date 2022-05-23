@@ -15,7 +15,8 @@ namespace WebSkladTest1.db
                 Id = shop.Id,
                 Email = shop.Email,
                 Name = shop.Name,
-                Phone = shop.Phone
+                Phone = shop.Phone,
+                Address = shop.Address
             };
         }
 
@@ -26,7 +27,8 @@ namespace WebSkladTest1.db
                 Id = shop.Id,
                 Email = shop.Email,
                 Name = shop.Name,
-                Phone = shop.Phone
+                Phone = shop.Phone,
+                Address = shop.Address
             };
         }
     }

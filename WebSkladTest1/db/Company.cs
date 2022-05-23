@@ -18,6 +18,7 @@ namespace WebSkladTest1.db
         public string Image { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
+        public string Address { get; set; }
 
         public virtual ICollection<Supplier> Suppliers { get; set; }
     }
