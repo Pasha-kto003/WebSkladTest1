@@ -19,6 +19,6 @@ namespace ModelApi
 
         public PersonalApi Personal { get; set; }
         public List<ProductApi> Products { get; set; }
-        public IEnumerable<CrossProductRackApi> CrossProductRacks { get; set; }
+        public List<CrossProductRackApi> CrossProductRacks { get; set; }
     }
 }

@@ -44,7 +44,7 @@ namespace WebSkladTest1.Controllers
 
         // PUT api/<CrossRackController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] CrossProductRackApi crossProduct)
         {
         }
 
