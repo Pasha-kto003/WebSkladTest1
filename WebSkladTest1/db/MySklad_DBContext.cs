@@ -118,7 +118,6 @@ namespace WebSkladTest1.db
             modelBuilder.Entity<CrossProductRack>(entity =>
             {
                 entity.HasKey(e => new { e.RackId, e.ProductId });
-
                 entity.ToTable("CrossProductRack");
 
                 entity.Property(e => e.DateProductPlacement).HasColumnType("datetime");

@@ -35,11 +35,14 @@ namespace WebSkladTest1.Controllers
 
         // POST api/<CrossRackController>
         [HttpPost]
-        public async Task Post([FromBody] CrossProductRackApi crossProduct)
+        public async Task<OkObjectResult> Post([FromBody] CrossProductRackApi crossProduct)
         {
             var newUnit = (CrossProductRack)crossProduct;
+            newUnit.ProductId = crossProduct.ProductId;
+            newUnit.RackId = crossProduct.RackId;
             await dBContext.CrossProductRacks.AddAsync(newUnit);
             await dBContext.SaveChangesAsync();
+            return Ok(crossProduct.RackId);
         }
 
         // PUT api/<CrossRackController>/5
